@@ -1,0 +1,9 @@
+2024-10-27 22:36:00,547  root       get_pty    DEBUG    Pty name: /dev/ttys006
+2024-10-27 22:36:00,547  root       run        INFO     
+
+ELM327 OBD-II adapter emulator v3.0.0 started on pseudo-tty port "/dev/ttys006".
+
+2024-10-27 22:39:46,373  root       terminate  DEBUG    Start termination procedure.
+2024-10-27 22:39:47,486  root       read_from_device DEBUG    Read interrupted. Terminating.
+2024-10-27 22:39:47,486  root       terminate  DEBUG    Terminated.
+2024-10-27 22:39:47,486  root       terminate  DEBUG    Start termination procedure.
