@@ -7,12 +7,11 @@ def connect_to_obd(port):
     if connection is not None:
         return connection
     try:
-        connection = obd.OBD(port=port)  # Initialize connection on the given port
+        connection = obd.OBD(port=port)  
         return connection
     except serial.SerialException:
         return None
 
-# Function to disconnect from OBD-II
 def disconnect_obd():
     global connection
     if connection:
