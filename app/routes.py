@@ -5,15 +5,23 @@ main = Blueprint('main', __name__)
 
 @main.route('/connect', methods=['POST'])
 def connect():
-    data = request.json
-    bt_device = data.get('port')
+
+    try:
+           data = request.json
+           bt_device = data.get('port')
     
-    connection = connect_to_obd(bt_device)
+           connection = connect_to_obd(bt_device)
     
-    if connection:
-        return jsonify({"status": "connected", "port": bt_device})
-    else:
-        return jsonify({"status": "failed", "message": "Could not connect to OBD-II device"}), 500
+           if connection:
+             return jsonify({"status": "connected", "port": bt_device})
+           else:
+            return jsonify({"status": "failed", "message": "Could not connect to OBD-II device"}), 500
+             
+
+    except Exception as e:
+        print(f"Error connecting to OBD-II device on port {bt_device}: {e}")
+        return None      
+   
 
 @main.route('/disconnect', methods=['POST'])
 def disconnect():
